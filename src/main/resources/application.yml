@@ -1,5 +1,8 @@
 server:
   port: 8060
+  ssl:
+    key-store: www.guolisha.top.pfx
+    key-store-password: xtdG9SzJ
   tomcat:
     max-threads: 800
     uri-encoding: utf-8
