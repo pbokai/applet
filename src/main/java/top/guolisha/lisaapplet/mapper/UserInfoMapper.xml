@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="top.guolisha.lisaapplet.mapper.UserInfoMapper">
+
+    <resultMap id="getUserInfo" type="top.guolisha.lisaapplet.bean.UserInfo">
+
+        <result property="openId" column="open_id" />
+        <result property="nickName" column="nick_name"/>
+        <result property="language" column="use_language" />
+        <result property="gender" column="gender" />
+        <result property="city" column="city" />
+        <result property="province" column="province" />
+        <result property="country" column="country" />
+        <result property="avatarUrl" column="avatar_url" />
+        <result property="createTime" column="create_time" />
+    </resultMap>
+
+    <sql id="base_userinfo_list">
+        id,nick_name,use_language,gender,city,province,country,avatar_url,create_time
+    </sql>
+
+    <select id="login" parameterType="top.guolisha.lisaapplet.bean.UserInfo" resultMap="getUserInfo" >
+        SELECT * FROM userinfo
+
+    </select>
+
+  <insert id="addWeChatUser">
+      insert into userinfo(open_id,nick_name,use_language,gender,city,province,country,avatar_url,create_time,sessionid)
+      values(#{openId},#{nickName},#{language},#{gender},#{city},#{province},#{country},#{avatarUrl},#{createTime},#{sessionid})
+      on duplicate key update nick_name=#{nickName},use_language=#{language},gender=#{gender},city=#{city},province=#{province},country=#{country},avatar_url=#{avatarUrl},create_time=#{createTime},sessionid=#{sessionid}
+  </insert>
+
+</mapper>
