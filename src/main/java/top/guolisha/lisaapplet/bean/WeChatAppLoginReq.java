@@ -11,6 +11,8 @@ public class WeChatAppLoginReq {
 
     private String signature;
 
+
+
     public WeChatAppLoginReq() {
     }
 

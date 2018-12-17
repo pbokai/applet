@@ -37,8 +37,8 @@
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
-            <scope>8.0.13</scope>
-            <!--<scope>runtime</scope>-->
+            <!--<scope>8.0.13</scope>-->
+            <scope>runtime</scope>
         </dependency>
 
         <dependency>
@@ -124,7 +124,7 @@
                     <include>**/*.xml</include>
                 </includes>
             </resource>
-            <!--指定资源的位置-->
+            <!--指定资源的位�?->
             <resource>
                 <directory>src/main/resources</directory>
                 <includes>
